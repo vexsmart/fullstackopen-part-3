@@ -9,6 +9,7 @@ app.use(morgan("tiny"));
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static("dist"));
 const PORT = process.env.PORT ||3001;
 
 let persons = [
@@ -35,7 +36,7 @@ let persons = [
 ];
 
 app.get("/", (request, response) => {
-  response.send("Hello World!");
+ 
 })
 
 app.get("/api/persons", (request, response) => {
